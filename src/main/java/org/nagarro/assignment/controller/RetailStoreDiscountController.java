@@ -1,25 +1,23 @@
-package the.retail.store.controller;
+package org.nagarro.assignment.controller;
 
+import org.nagarro.assignment.model.Cart;
+import org.nagarro.assignment.model.DiscountResponse;
+import org.nagarro.assignment.service.RetailStoreDiscountService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import the.retail.store.model.Bill;
-import the.retail.store.model.DiscountResponse;
-import the.retail.store.service.RetailStoreDiscountService;
-
-@RequestMapping("/retail-store/discount")
+@RequestMapping("/discount")
 @RestController
 public class RetailStoreDiscountController {
 
 	@Autowired
 	RetailStoreDiscountService discountService;
-	
+
 	@PostMapping("/calculate")
-	public DiscountResponse getNetPayableAmount(@RequestBody Bill bill) {
-		return discountService.calculateNetPayableAmount(bill);
+	public DiscountResponse getNetPayableAmount(@RequestBody Cart cart) {
+		return discountService.calculateNetPayableAmount(cart);
 	}
 }

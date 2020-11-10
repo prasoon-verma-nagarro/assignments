@@ -1,4 +1,4 @@
-package the.retail.store.model;
+package org.nagarro.assignment.model;
 
 public enum UserTypeEnum {
 

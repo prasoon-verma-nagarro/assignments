@@ -1,4 +1,4 @@
-package the.retail.store.exception;
+package org.nagarro.assignment.exception;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,15 +14,15 @@ public class RetailShopExceptionHandler {
 	private static final Logger LOGGER = LoggerFactory.getLogger(RetailShopExceptionHandler.class);
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
-    @ExceptionHandler(RetailStoreException.class)
-    public ResponseEntity<String> handleConflict(RetailStoreException ex) {
-        LOGGER.error("SOMETHING WENT BAD!!!");
-        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
-    }
-	
+	@ExceptionHandler(RetailStoreException.class)
+	public ResponseEntity<String> handleConflict(RetailStoreException ex) {
+		LOGGER.error("SOMETHING WENT BAD!!!");
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+	}
+
 	@ExceptionHandler(Throwable.class)
 	public final ResponseEntity<String> handleUncaughtExceptions(Throwable ex) {
 		LOGGER.error("Something went bad", ex);
-		return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(ex.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 }

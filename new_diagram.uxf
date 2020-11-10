@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>170</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>User</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>410</x>
+      <y>120</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>User
+--
+String name
+String address
+UserTypeEnum [EMPLOYEE, AFFILIATE, CUSTOMER, NEW]
+Date userSince</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>410</y>
+      <w>130</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>Bill
+--
+id: Integer-1
+User user
+List&lt;Item&gt; items</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>120</y>
+      <w>410</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>Item
+--
+String name
+Double price
+Integer quantity
+ItemTypeEnum type [Groceries, Furniture, Cosmetics, Medicine]
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>220</y>
+      <w>120</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;190.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>230</y>
+      <w>130</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>110.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

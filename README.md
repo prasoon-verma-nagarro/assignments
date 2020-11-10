@@ -8,7 +8,7 @@
 as a discount)
 
 ##Example Request
-http://localhost:8080/retail-store/discount/calculate
+http://localhost:8080/retail-store/api/discount/calculate
 
 {
 "billId": 1,
